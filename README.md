@@ -24,3 +24,10 @@ npm i
 ```
 
 When these are done, open Max patcher and init Node for Max runtime by sending the message [script npm install] to [node.script] object
+
+## Run server
+
+```shell
+cd python/
+python main.py
+```
