@@ -1,4 +1,5 @@
 import json
+import random
 import time
 from concurrent.futures import ThreadPoolExecutor
 
@@ -11,14 +12,16 @@ with open("config.json", "r") as f:
     config = json.load(f)
 
 
+l = ["GOOD", "OK", "BAD"]
+names = ["Taro", "Jiro", "Saburo", "Shiro", "Goro"]
+
+
 class SampleServicer(main_pb2_grpc.SearchServiceServicer):
     def Search(self, request, context):
         return main_pb2.CandidateResponse(
             memo=f"Hi {request.requester}!",
-            candidates=[
-                {'name': 'Taro', 'rate': 'GOOD'},
-                {'name': 'Jiro', 'rate': 'BAD'}
-            ]
+            candidates=[{"name": n, "rate": random.choice(
+                l), "input_num": request.requester} for n in names]
         )
 
 

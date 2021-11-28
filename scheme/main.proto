@@ -8,9 +8,10 @@ message Candidate {
   }
   string name = 1;
   Rate rate = 2;
+  int32 input_num = 3;
 }
 
-message CandidateRequest { string requester = 1; }
+message CandidateRequest { int32 requester = 1; }
 
 message CandidateResponse {
   string memo = 1;

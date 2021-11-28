@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\nmain.proto\"[\n\tCandidate\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1d\n\x04rate\x18\x02 \x01(\x0e\x32\x0f.Candidate.Rate\"!\n\x04Rate\x12\x08\n\x04GOOD\x10\x00\x12\x06\n\x02OK\x10\x01\x12\x07\n\x03\x42\x41\x44\x10\x02\"%\n\x10\x43\x61ndidateRequest\x12\x11\n\trequester\x18\x01 \x01(\t\"A\n\x11\x43\x61ndidateResponse\x12\x0c\n\x04memo\x18\x01 \x01(\t\x12\x1e\n\ncandidates\x18\x02 \x03(\x0b\x32\n.Candidate2@\n\rSearchService\x12/\n\x06Search\x12\x11.CandidateRequest\x1a\x12.CandidateResponseb\x06proto3'
+  serialized_pb=b'\n\nmain.proto\"n\n\tCandidate\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1d\n\x04rate\x18\x02 \x01(\x0e\x32\x0f.Candidate.Rate\x12\x11\n\tinput_num\x18\x03 \x01(\x05\"!\n\x04Rate\x12\x08\n\x04GOOD\x10\x00\x12\x06\n\x02OK\x10\x01\x12\x07\n\x03\x42\x41\x44\x10\x02\"%\n\x10\x43\x61ndidateRequest\x12\x11\n\trequester\x18\x01 \x01(\x05\"A\n\x11\x43\x61ndidateResponse\x12\x0c\n\x04memo\x18\x01 \x01(\t\x12\x1e\n\ncandidates\x18\x02 \x03(\x0b\x32\n.Candidate2@\n\rSearchService\x12/\n\x06Search\x12\x11.CandidateRequest\x1a\x12.CandidateResponseb\x06proto3'
 )
 
 
@@ -49,8 +49,8 @@ _CANDIDATE_RATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=72,
-  serialized_end=105,
+  serialized_start=91,
+  serialized_end=124,
 )
 _sym_db.RegisterEnumDescriptor(_CANDIDATE_RATE)
 
@@ -77,6 +77,13 @@ _CANDIDATE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='input_num', full_name='Candidate.input_num', index=2,
+      number=3, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -91,7 +98,7 @@ _CANDIDATE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=14,
-  serialized_end=105,
+  serialized_end=124,
 )
 
 
@@ -105,8 +112,8 @@ _CANDIDATEREQUEST = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='requester', full_name='CandidateRequest.requester', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -122,8 +129,8 @@ _CANDIDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=107,
-  serialized_end=144,
+  serialized_start=126,
+  serialized_end=163,
 )
 
 
@@ -161,8 +168,8 @@ _CANDIDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=146,
-  serialized_end=211,
+  serialized_start=165,
+  serialized_end=230,
 )
 
 _CANDIDATE.fields_by_name['rate'].enum_type = _CANDIDATE_RATE
@@ -203,8 +210,8 @@ _SEARCHSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=213,
-  serialized_end=277,
+  serialized_start=232,
+  serialized_end=296,
   methods=[
   _descriptor.MethodDescriptor(
     name='Search',

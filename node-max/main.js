@@ -4,6 +4,7 @@ const Max = require("max-api");
 
 // This will be printed directly to the Max console
 Max.post(`Loaded the ${path.basename(__filename)} script`);
+// console.log(`running in ${process.env.MAX_ENV}`);
 
 // Use the 'addHandler' function to register a function for a particular message
 Max.addHandler("bang", () => {
@@ -18,14 +19,15 @@ Max.addHandler("echo", (msg) => {
 Max.addHandler("search", (msg) => {
   grpc.client.search(
     {
-      requester: msg,
+      requester: Number(msg),
     },
     (err, res) => {
       if (err) {
         Max.post("Error!");
         return console.error(err);
       }
-      Max.post(res);
+      Max.post(res.memo);
+      Max.outlet(res.candidates);
     }
   );
 });
